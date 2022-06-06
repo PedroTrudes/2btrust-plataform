@@ -51,6 +51,8 @@ Table of Contents
 
 /* 00.Variables and Imports */
 
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
 @import url("https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700");
 
 $main-menu-item-height: 110px;
@@ -3434,11 +3436,11 @@ body.default-transition main {
     line-height: 1rem;
     }
   }
-  
+
     .fc-toolbar.fc-header-toolbar .fc-prev-button {
       margin-right: 0;
     }
-  
+
     .fc-toolbar.fc-header-toolbar .fc-next-button {
       margin-right: 5px;
     }
@@ -7759,7 +7761,7 @@ app-profile-who-to-follow app-user-follow:last-of-type > div {
     border-radius: $border-radius;
   }
 
-  
+
 
   .input-group-append .btn + .btn,
   .input-group-append .btn + .input-group-text,
@@ -10778,3 +10780,5 @@ footer.page-footer {
     padding-right: 1rem;
   }
 }
+
+

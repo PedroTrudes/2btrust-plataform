@@ -1,28 +1,45 @@
 <div class="card">
-  <div class="card-body"  style="height: 100vh;">
+  <div class="card-body container__formulario--input" style="height: 100vh">
+    <div class="container__link--sing mb-4">
+      <span> Do you don't have account? </span>
+      <div class="link--sing">
+        <a routerlink="" class="sing--link"> register now
+          <i class="bi bi-arrow-up-right"></i>
+        </a>
+      </div>
+    </div>
 
-    <img class="mb-4" src="../../../../assets/img/2btrust-img/logos/dark-logo.png" alt="Logo da 2btrust">
+    <div class="img__logo--form">
+      <img
+        class="mb-4"
+        src="../../../../assets/img/2btrust-img/logos/dark-logo.png"
+        alt="Logo da 2btrust"
+      />
+    </div>
     <form #overLineForm="ngForm" novalidate>
-      <div class="teste">
-        <h1>testando</h1>
+      <div class="mb-3">
+        <h3>acesse sua conta na 2btrust.</h3>
       </div>
-      <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Email address</label>
-      </div>
-      <label class="form-group form-control">
-        <input class="form-control" required ngModel #email2="ngModel" name="email2"/>
-        <span>{{ 'forms.email' | translate }}</span>
-        <div *ngIf="!email2.valid && overLineForm.submitted" class="invalid-tooltip">Value is required!</div>
-      </label>
-      <label class="form-group has-float-label">
-        <input class="form-control" type="password" placeholder="" required ngModel #password2="ngModel" name="password2"/>
-        <span>{{ 'forms.password' | translate }}</span>
-        <div *ngIf="!password2.valid && overLineForm.submitted" class="invalid-tooltip">Value is required!</div>
-      </label>
-      <button class="btn btn-primary" type="submit" style="width: 100%;">{{ 'forms.signup' | translate }}</button>
-    </form >
 
+      <div class="form__input--login">
+        <input type="text" class="login--input" required />
+        <label for="" class="login--label">Login</label>
+      </div>
+      <div class="form__input--login">
+        <input type="password" class="login--input" required />
+        <label for="" class="login--label">Senha</label>
+      </div>
+      <button class="btn--logar" type="submit" style="width: 100%">
+        {{ "forms.signup" | translate }}
+
+        <i class="bi bi-arrow-up-right"></i>
+
+      </button>
+    </form>
+
+    <div class="container__forgot--password">
+      <a href="#">Forgot login or password? </a>
+      <span>version 6.01.26</span>
+    </div>
   </div>
 </div>
-

@@ -18,6 +18,10 @@ import { FormsContainersModule } from './containers/forms/forms.containers.modul
 import { FormValidationsContainersModule } from './containers/form-validations/form.validations.containers.module'
 import {DashboardsContainersModule} from './containers/dashboards/dashboards.containers.module';
 import {UiCardsContainersModule} from './containers/ui/cards/ui.cards.containers.module';
+import { SinginComponent } from './2btrust/forms/singin/singin.component';
+import { HeaderComponent } from './2btrust/template/header/header.component';
+import { FooterComponent } from './2btrust/template/footer/footer.component';
+import { NavegateComponent } from './2btrust/template/navegate/navegate.component';
 
 @NgModule({
   imports: [
@@ -38,6 +42,10 @@ import {UiCardsContainersModule} from './containers/ui/cards/ui.cards.containers
   declarations: [
     AppComponent,
     LoginComponent,
+    SinginComponent,
+    HeaderComponent,
+    FooterComponent,
+    NavegateComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
