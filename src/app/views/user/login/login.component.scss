@@ -13,6 +13,10 @@
       width: 100%;
       height: 100vh;
     }
+
+    .img__mobile--login{
+      display: none;
+    }
     .container__link--website{
       position: absolute;
       left: 15%;
@@ -44,9 +48,11 @@
   justify-content: center;
   .container__formulario--input{
     width: 70%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
 
     form{
       button{
@@ -165,3 +171,61 @@
 // .botao--login:hover{
 //   background-color: #11235B;
 // }
+
+
+@media (max-width: 900px){
+.container__formulario--log{
+  flex-direction: column;
+  position: relative;
+
+  .container__img--form{
+    width: 100%;
+    height: 40vh;
+
+    .img__desktop--login{
+      display: none;
+    }
+    .img__mobile--login{
+      display: block;
+      height: 40vh;
+      width: 100%;
+    }
+
+  }
+
+}
+
+.container__formulario--spacing{
+  background-color: red;
+.card{
+  position: absolute;
+  top: 38%;
+  height: 63vh;
+  // width: 100vw;
+  .container__formulario--input{
+    width: 80%;
+    .container__link--sing{
+      width: 80%;
+    }
+    form{
+      width: 90%;
+
+    }
+  }
+}
+}
+
+}
+@media (max-width: 500px){
+  .container__formulario--spacing{
+    .card{
+
+      .container__formulario--input{
+        width: 100%;
+        .container__link--sing{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
