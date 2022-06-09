@@ -103,6 +103,8 @@ $success-color: #3e884f;
 $warning-color: #b69329;
 $error-color: #c43d4b;
 
+
+
 /* 01.Base */
 html {
   width: 100%;
@@ -2067,9 +2069,9 @@ a.btn-secondary:not([href]):not([tabindex]) {
 }
 
 .logo {
-  width: 110px;
-  height: 40px;
-  background: url($logo-path) no-repeat;
+  width: 150px;
+  height: 60px;
+  background: url(../../img/2btrust-img/logos/logo@2x.gif) no-repeat;
   background-position: center center;
   margin: 0 auto;
   background-size: contain;
