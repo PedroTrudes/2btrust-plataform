@@ -5,7 +5,13 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { AuthGuard } from '../../shared/auth.guard';
+import { UserRole } from '../../shared/auth.roles';
+import { environment } from 'src/environments/environment';
+
 // import {LoginComponent} from '../../2btrust/forms/login/login.component';
+
+const adminRoot = environment.adminRoot.substr(1); // path cannot start with a slash
 
 const routes: Routes = [
     {
@@ -17,7 +23,15 @@ const routes: Routes = [
             { path: 'forgot-password', component: ForgotPasswordComponent },
             { path: 'reset-password', component: ResetPasswordComponent }
         ]
-    }
+    },
+    {
+
+      path: adminRoot,
+      loadChildren: () => import('../app/app.module').then((m) => m.AppModule),
+      data: { roles: [UserRole.Admin, UserRole.Editor] },
+      canActivate: [AuthGuard],
+      canActivateChild: [AuthGuard],
+    },
 ];
 
 @NgModule({

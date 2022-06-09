@@ -22,6 +22,11 @@ export class LoginComponent {
   constructor(private authService: AuthService, private notifications: NotificationsService, private router: Router) { }
 
 
+  showMobileMenu = false;
+
+  buyUrl = environment.buyUrl;
+  adminRoot = environment.adminRoot;
+
   onSubmit(): void {
     if (this.loginForm.valid) {
       if (this.buttonDisabled) {
