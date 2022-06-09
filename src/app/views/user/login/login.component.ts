@@ -1,9 +1,13 @@
+import { LoginService } from './../../../shared/services/login.service';
+import { RequestLogin } from './../../../shared/RequestLogin';
 import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { NotificationsService, NotificationType } from 'angular2-notifications';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/auth.service';
 import { environment } from 'src/environments/environment';
+
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +16,8 @@ import { environment } from 'src/environments/environment';
 
 })
 export class LoginComponent {
+
+
   @ViewChild('loginForm') loginForm: NgForm;
   emailModel = 'demo@vien.com';
   passwordModel = 'demovien1122';
@@ -19,8 +25,23 @@ export class LoginComponent {
   buttonDisabled = false;
   buttonState = '';
 
-  constructor(private authService: AuthService, private notifications: NotificationsService, private router: Router) { }
+  public requestLogin: RequestLogin;
 
+  constructor(private loginService: LoginService, private authService: AuthService, private notifications: NotificationsService, private router: Router) { }
+
+  ngOnInit(): void{
+    this.requestLogin = new RequestLogin();
+  }
+
+  public doLogin() :void{
+    this.loginService.doLogin(this.requestLogin).subscribe(dataLog =>{
+      console.log(dataLog);
+    },
+    error =>{
+      console.error(error);
+    });
+
+  }
 
   showMobileMenu = false;
 

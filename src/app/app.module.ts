@@ -1,3 +1,4 @@
+import { FormsModule } from './views/app/ui/forms/forms.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app.routing';
@@ -38,7 +39,8 @@ import { DashboardComponent } from './2btrust/views/dashboard/dashboard.componen
     FormsContainersModule,
     FormValidationsContainersModule,
     DashboardsContainersModule,
-    UiCardsContainersModule
+    UiCardsContainersModule,
+    FormsModule,
   ],
   declarations: [
     AppComponent,
