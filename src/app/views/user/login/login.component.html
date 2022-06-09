@@ -1,39 +1,114 @@
-<div class="card auth-card">
-  <div class="position-relative image-side ">
-    <p class=" text-white h2">MAGIC IS IN THE DETAILS</p>
-    <p class="white mb-0">
-      Please use your credentials to login.
-      <br>If you are not a member, please
-      <a routerLink="/user/register" class="white white-underline-link">register</a>.
-    </p>
+<div class="container__formulario--log">
+  <div class="container__img--form">
+    <img
+      class="img__desktop--login"
+      src="../../../../assets/img/2btrust-img/logos/2B - Assets - 02.jpg"
+      alt="teste de formulario"
+    />
+    <div class="container__link--website">
+      <a href="https://2btrust.com/" class="link--website">
+        visit our website
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
+    </div>
   </div>
-  <div class="form-side">
-    <a class="c-pointer">
-      <span class="logo-single"></span>
-    </a>
-    <h6 class="mb-4">Login</h6>
+  <div class="container__formulario--spacing">
+    <div class="card">
+      <div class="card-body container__formulario--input" style="height: 100vh; width: 50vw;">
+        <div class="container__link--sing mb-4">
+          <span> Do you don't have account? </span>
+          <div class="link--sing">
+            <a routerLink="/register" class="sing--link">
+              register now
+              <i class="bi bi-arrow-up-right"></i>
+            </a>
+          </div>
+        </div>
 
-    <form #loginForm="ngForm" novalidate (ngSubmit)="onSubmit()">
-      <label class="form-group has-float-label">
-        <input class="form-control" required email ngModel #email="ngModel" name="email" [(ngModel)]="emailModel" />
-        <span>{{ 'user.email' | translate }}</span>
-        <div *ngIf="!email.valid && loginForm.submitted" class="invalid-tooltip">Email is required!</div>
-      </label>
-      <label class="form-group has-float-label">
-        <input class="form-control" type="password" placeholder="" required ngModel #password="ngModel" name="password"
-          [(ngModel)]="passwordModel" />
-        <span>{{ 'user.password' | translate }}</span>
-        <div *ngIf="!password.valid && loginForm.submitted" class="invalid-tooltip">Password is required!</div>
-      </label>
-      <div class="d-flex justify-content-between align-items-center">
-        <a routerLink="/user/forgot-password">{{ 'user.forgot-password' | translate }}?</a>
-        <app-state-button [btnClass]="'btn btn-primary btn-lg btn-shadow'" [currentState]="buttonState"
-          [isDisabled]="buttonDisabled" click="onLoginClick()">
-          {{ 'user.login-button' | translate | uppercase }}
-        </app-state-button>
+        <div class="img__logo--form">
+          <img
+            class="mb-4"
+            src="../../../../assets/img/2btrust-img/logos/dark-logo.png"
+            alt="Logo da 2btrust"
+          />
+        </div>
+        <form #loginForm="ngForm" novalidate (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <h3>acesse sua conta na 2btrust.</h3>
+          </div>
+          <div class="form__input--login">
+            <input type="text" class="login--input" required />
+            <label for="" class="login--label">Login</label>
+          </div>
+          <div class="form__input--login">
+            <input type="password" class="login--input" required />
+            <label for="" class="login--label">Senha</label>
+          </div>
+          <button class="btn--logar" type="submit" style="width: 100%">
+            {{ "forms.signup" | translate }}
+
+            <i class="bi bi-arrow-up-right"></i>
+
+          </button>
+        </form>
+
+        <div class="container__forgot--password">
+          <a routerLink="/forgot-password">Forgot login or password? </a>
+          <span>version 6.01.26</span>
+        </div>
       </div>
-    </form>
-
+    </div>
   </div>
+  <simple-notifications></simple-notifications>
 </div>
-<simple-notifications></simple-notifications>
+
+        <!-- <label class="form-group has-float-label">
+          <input
+            class="form-control"
+            required
+            email
+            ngModel
+            #email="ngModel"
+            name="email"
+            [(ngModel)]="emailModel"
+          />
+          <span>{{ "user.email" | translate }}</span>
+          <div
+            *ngIf="!email.valid && loginForm.submitted"
+            class="invalid-tooltip"
+          >
+            Email is required!
+          </div>
+        </label>
+        <label class="form-group has-float-label">
+          <input
+            class="form-control"
+            type="password"
+            placeholder=""
+            required
+            ngModel
+            #password="ngModel"
+            name="password"
+            [(ngModel)]="passwordModel"
+          />
+          <span>{{ "user.password" | translate }}</span>
+          <div
+            *ngIf="!password.valid && loginForm.submitted"
+            class="invalid-tooltip"
+          >
+            Password is required!
+          </div>
+        </label>
+        <div class="d-flex justify-content-between align-items-center">
+          <a routerLink="/user/forgot-password"
+            >{{ "user.forgot-password" | translate }}?</a
+          >
+          <app-state-button
+            [btnClass]="'btn btn-primary btn-lg btn-shadow'"
+            [currentState]="buttonState"
+            [isDisabled]="buttonDisabled"
+            click="onLoginClick()"
+          >
+            {{ "user.login-button" | translate | uppercase }}
+          </app-state-button>
+        </div> -->

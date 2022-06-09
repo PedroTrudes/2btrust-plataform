@@ -1,4 +1,4 @@
-<div [ngClass]="{'landing-page': true,'show-mobile-menu': showMobileMenu}">
+<!-- <div [ngClass]="{'landing-page': true,'show-mobile-menu': showMobileMenu}">
     <div class="mobile-menu" (click)="$event.stopPropagation()">
         <a (click)="scrollTo('#home')" href="javascript:;" class="logo-mobile">
             <span></span>
@@ -307,4 +307,69 @@
 
         </div>
     </div>
+</div>
+-->
+
+
+<div class="container__formulario--log">
+  <div class="container__img--form">
+    <img
+      class="img__desktop--login"
+      src="../../../../assets/img/2btrust-img/logos/2B - Assets - 02.jpg"
+      alt="teste de formulario"
+    />
+    <div class="container__link--website">
+      <a href="https://2btrust.com/" class="link--website"> visit our website
+        <i class="bi bi-arrow-up-right"></i>
+
+      </a>
+    </div>
+  </div>
+  <div class="container__formulario--spacing">
+    <div class="card">
+      <div class="card-body container__formulario--input" style="height: 100vh">
+        <div class="container__link--sing mb-4">
+          <span> Do you don't have account? </span>
+          <div class="link--sing">
+            <a routerlink="" class="sing--link"> register now
+              <i class="bi bi-arrow-up-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="img__logo--form">
+          <img
+            class="mb-4"
+            src="../../../../assets/img/2btrust-img/logos/dark-logo.png"
+            alt="Logo da 2btrust"
+          />
+        </div>
+        <!-- <form #overLineForm="ngForm" novalidate> -->
+          <div class="mb-3">
+            <h3>acesse sua conta na 2btrust.</h3>
+          </div>
+
+          <div class="form__input--login">
+            <input type="text" class="login--input" required />
+            <label for="" class="login--label">Login</label>
+          </div>
+          <div class="form__input--login">
+            <input type="password" class="login--input" required />
+            <label for="" class="login--label">Senha</label>
+          </div>
+          <button class="btn--logar" type="submit" style="width: 100%">
+            {{ "forms.signup" | translate }}
+
+            <i class="bi bi-arrow-up-right"></i>
+
+          </button>
+        <!-- </form> -->
+
+        <div class="container__forgot--password">
+          <a href="#">Forgot login or password? </a>
+          <span>version 6.01.26</span>
+        </div>
+      </div>
+    </div>
+      </div>
 </div>

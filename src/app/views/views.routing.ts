@@ -6,15 +6,18 @@ import { environment } from 'src/environments/environment';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from '../shared/auth.guard';
 import { UserRole } from '../shared/auth.roles';
+import { UserComponent } from './user/user.component';
+import {LoginComponent} from '../2btrust/forms/login/login.component';
+import {SinginComponent} from '../2btrust/forms/singin/singin.component'
 
 const adminRoot = environment.adminRoot.substr(1); // path cannot start with a slash
 
 let routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent,
-    pathMatch: 'full',
-  },
+  // {
+  //   path: '',
+  //   component: UserComponent,
+  //   pathMatch: 'full',
+  // },
   // {
   //   path: '',
   //   pathMatch: 'full',
@@ -28,7 +31,7 @@ let routes: Routes = [
     canActivateChild: [AuthGuard],
   },
   {
-    path: 'user',
+    path: '',
     loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
   },
   { path: 'error', component: ErrorComponent },
@@ -38,11 +41,11 @@ let routes: Routes = [
 
 if (!environment.isAuthGuardActive) {
   routes = [
-    {
-      path: '',
-      component: HomeComponent,
-      pathMatch: 'full',
-    },
+    // {
+    //   path: '',
+    //   component: LoginComponent,
+    //   pathMatch: 'full',
+    // },
     {
       path: 'app',
       loadChildren: () => import('./app/app.module').then((m) => m.AppModule),

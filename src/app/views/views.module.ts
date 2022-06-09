@@ -10,6 +10,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeadroomModule } from '@ctrl/ngx-headroom';
 import { HomeComponent } from './home/home.component';
+import {LoginComponent} from './user/login/login.component';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { AuthGuard } from '../shared/auth.guard';
 @NgModule({
@@ -25,6 +26,7 @@ import { AuthGuard } from '../shared/auth.guard';
     BrowserAnimationsModule,
     HeadroomModule,
     ScrollToModule.forRoot(),
+
   ],
   providers: [AuthGuard],
 })

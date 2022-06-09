@@ -22,6 +22,7 @@ import { SinginComponent } from './2btrust/forms/singin/singin.component';
 import { HeaderComponent } from './2btrust/template/header/header.component';
 import { FooterComponent } from './2btrust/template/footer/footer.component';
 import { NavegateComponent } from './2btrust/template/navegate/navegate.component';
+import { DashboardComponent } from './2btrust/views/dashboard/dashboard.component';
 
 @NgModule({
   imports: [
@@ -46,6 +47,7 @@ import { NavegateComponent } from './2btrust/template/navegate/navegate.componen
     HeaderComponent,
     FooterComponent,
     NavegateComponent,
+    DashboardComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
