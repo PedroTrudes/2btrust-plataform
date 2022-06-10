@@ -13,8 +13,7 @@ export class LoginService {
 
   public doLogin(requestLogin: RequestLogin): Observable<ResponseLogin> {
     return this.httpClient.post<ResponseLogin>(
-      'http://2btrust-api-prod.us-east-1.elasticbeanstalk.com/docs/api-docs.json/Authentication/login',
-       requestLogin
-       );
+      'http://2btrust-api-prod.us-east-1.elasticbeanstalk.com/api/v2/login',
+       requestLogin);
   }
 }
