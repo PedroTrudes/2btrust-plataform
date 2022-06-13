@@ -41,14 +41,20 @@
             <h3>acesse sua conta na 2btrust.</h3>
           </div>
           <div class="form__input--login">
-            <input [(ngModel)]="requestLogin.email" name="email" type="text" class="login--input" required />
+            <input #email="ngModel" [(ngModel)]="requestLogin.email" name="email" type="text" class="login--input" required />
             <label for="email" class="login--label">Login</label>
+            <!-- <div *ngIf="email.invalid" class="invalid-tooltip">
+            Email is required!
+            </div> -->
           </div>
           <div class="form__input--login">
-            <input [(ngModel)]="requestLogin.password" name="password" type="password" class="login--input" required />
+            <input #password="ngModel" [(ngModel)]="requestLogin.password" name="password" type="password" class="login--input" required />
             <label for="password" class="login--label">Senha</label>
+            <!-- <div *ngIf="password.invalid" class="invalid-tooltip">
+              password is required!
+              </div> -->
           </div>
-          <button (click)="doLogin()" class="btn--logar" type="button" style="width: 100%">
+          <button (click)="doLogin()"  class="btn--logar" type="button" style="width: 100%">
             {{ "forms.signup" | translate }}
 
             <i class="bi bi-arrow-up-right"></i>

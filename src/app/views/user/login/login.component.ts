@@ -1,3 +1,4 @@
+import { AlertService } from './../../../shared/services/alert.service';
 import { LoginService } from './../../../shared/services/login.service';
 import { RequestLogin } from './../../../shared/RequestLogin';
 import { Component, ViewChild } from '@angular/core';
@@ -27,7 +28,7 @@ export class LoginComponent {
 
   public requestLogin: RequestLogin;
 
-  constructor(private loginService: LoginService, private authService: AuthService, private notifications: NotificationsService, private router: Router) { }
+  constructor(private alertService: AlertService ,private loginService: LoginService, private authService: AuthService, private notifications: NotificationsService, private router: Router) { }
 
   ngOnInit(): void{
     this.requestLogin = new RequestLogin();
@@ -37,9 +38,12 @@ export class LoginComponent {
     console.log(this.requestLogin);
     this.loginService.doLogin(this.requestLogin).subscribe(dataLog =>{
       console.log(dataLog);
+      this.alertService.success('logado com sucesso');
+      this.router.navigate([environment.adminRoot]);
     },
-    error =>{
-      console.error(error);
+    (httpError) =>{
+      this.alertService.error(httpError.error.errors.email[0] || httpError.error.errors.password[0]);
+      console.error(httpError);
     });
 
   }
