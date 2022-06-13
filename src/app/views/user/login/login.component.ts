@@ -34,6 +34,7 @@ export class LoginComponent {
   }
 
   public doLogin() :void{
+    console.log(this.requestLogin);
     this.loginService.doLogin(this.requestLogin).subscribe(dataLog =>{
       console.log(dataLog);
     },
