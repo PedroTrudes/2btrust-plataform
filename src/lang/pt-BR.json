@@ -496,6 +496,7 @@
     "email-u": "E-MAIL",
     "password-u": "PASSWORD",
     "tags-u": "TAGS",
+    "name-u" : "NAME",
     "date-u": "DATE",
     "state-u": "STATE",
     "grid": "Form Grid",

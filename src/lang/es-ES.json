@@ -471,6 +471,7 @@
     "quill-bubble": "Quill Burbuja"
   },
   "forms": {
+    "name-u" : "NAME",
     "basic": "Básico",
     "email": "Email",
     "email-muted": "Nunca compartiremos tu email con nadie más.",

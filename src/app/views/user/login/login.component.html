@@ -42,20 +42,24 @@
           </div>
           <div class="form__input--login">
             <input #email="ngModel" [(ngModel)]="requestLogin.email" name="email" type="text" class="login--input" required />
-            <label for="email" class="login--label">Login</label>
+            <label for="email" class="login--label">
+              {{ "forms.email-u" | translate }}
+            </label>
             <!-- <div *ngIf="email.invalid" class="invalid-tooltip">
             Email is required!
             </div> -->
           </div>
           <div class="form__input--login">
             <input #password="ngModel" [(ngModel)]="requestLogin.password" name="password" type="password" class="login--input" required />
-            <label for="password" class="login--label">Senha</label>
+            <label for="password" class="login--label" minlength="6">
+              {{ "forms.password-u" | translate }}
+            </label>
             <!-- <div *ngIf="password.invalid" class="invalid-tooltip">
               password is required!
               </div> -->
           </div>
           <button (click)="doLogin()"  class="btn--logar" type="button" style="width: 100%">
-            {{ "forms.signup" | translate }}
+            {{ "forms.signin" | translate }}
 
             <i class="bi bi-arrow-up-right"></i>
 

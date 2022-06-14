@@ -1,9 +1,13 @@
+import { RegisterService } from './../../../shared/services/register.service';
 import { Component, ViewChild } from '@angular/core';
 import { AuthService } from 'src/app/shared/auth.service';
 import { NotificationsService, NotificationType } from 'angular2-notifications';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { environment } from 'src/environments/environment';
+import { RequestRegister } from 'src/app/shared/RequestRegister';
+import { AlertService } from './../../../shared/services/alert.service';
+
 
 @Component({
   selector: 'app-register',
@@ -15,9 +19,23 @@ export class RegisterComponent {
   buttonDisabled = false;
   buttonState = '';
 
-  constructor(private authService: AuthService,
+  public requestRegister: RequestRegister;
+
+  constructor(
+    private registerService: RegisterService,
+    private authService: AuthService,
               private notifications: NotificationsService,
               private router: Router) { }
+
+  public doRegister() :void{
+    console.log(this.requestRegister);
+    this.registerService.doRegister(this.requestRegister).subscribe(dataRegister =>{
+      console.log(dataRegister);
+    },
+    (httpError) =>{
+      console.error(httpError);
+    })
+  }
 
   onSubmit(): void {
     if (this.registerForm.valid && !this.buttonDisabled) {

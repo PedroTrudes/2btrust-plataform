@@ -1,10 +1,134 @@
-<div class="card auth-card">
-  <div class="position-relative image-side ">
+<div class="container__formulario--log">
+  <div class="container__img--form">
+    <img
+      class="img__desktop--login"
+      src="../../../../assets/img/2btrust-img/logos/2B - Assets - 02.jpg"
+      alt="Homen no telefone"
+    />
+    <img
+      class="img__mobile--login"
+      src="../../../../assets/img/2btrust-img/logos/2B - Assets - 01.jpg"
+      alt="Um grande Predio"
+    />
+    <div class="container__link--website">
+      <a href="https://2btrust.com/" class="link--website">
+        visit our website
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
+    </div>
+  </div>
+  <div class="container__formulario--spacing">
+    <div class="card">
+      <div class="container__formulario--input">
+        <div class="container__link--sing mb-4">
+          <span> already have an account? </span>
+          <div class="link--sing">
+            <a routerLink="/register" class="sing--link">
+              Login
+              <i class="bi bi-arrow-up-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="img__logo--form">
+          <img
+            class="mb-4"
+            src="../../../../assets/img/2btrust-img/logos/dark-logo.png"
+            alt="Logo da 2btrust"
+          />
+        </div>
+        <form>
+          <div class="mb-3">
+            <h3>To Invest, please create an account</h3>
+          </div>
+          <div class="form__input--login">
+            <input name="name" type="text" class="login--input" required [(ngModel)]="requestRegister.name" #name="ngModel"/>
+            <label for="name" class="login--label">
+              NAME
+            </label>
+            <!-- [(ngModel)]="requestLogin.email" #email="ngModel"  -->
+            <!-- <div *ngIf="email.invalid" class="invalid-tooltip">
+          Email is required!
+          </div> -->
+          </div>
+          <div class="form__input--login">
+            <input name="email" type="text" class="login--input"  required email [(ngModel)]="requestRegister.email" #email="ngModel"/>
+            <label for="email" class="login--label">
+              EMAIL
+            <div *ngIf="!email.valid && registerForm.submitted" class="invalid-tooltip">Email is required!</div>
+            <div *ngIf="email?.errors?.email && registerForm.submitted" class="invalid-tooltip">Email must be a valid address!</div>
+
+            </label>
+            <!-- [(ngModel)]="requestLogin.email" #email="ngModel"  -->
+            <!-- <div *ngIf="email.invalid" class="invalid-tooltip">
+          Email is required!
+          </div> -->
+          </div>
+          <div class="form__input--login">
+            <input name="phone" type="text" class="login--input" required  [(ngModel)]="requestRegister.phone" #phone="ngModel"/>
+            <label for="phone" class="login--label">PHONE NUMBER (mobile preferred)</label>
+            <!-- [(ngModel)]="requestLogin.email" #email="ngModel"  -->
+            <!-- <div *ngIf="email.invalid" class="invalid-tooltip">
+          Email is required!
+          </div> -->
+          </div>
+          <div class="form__input--login">
+            <input name="password" type="password" class="login--input" required [(ngModel)]="requestRegister.password" #password="ngModel"/>
+            <label for="password" class="login--label" minlength="6">
+              PASSWORD
+            </label>
+            <!-- #password="ngModel" [(ngModel)]="requestLogin.password" -->
+            <!-- <div *ngIf="password.invalid" class="invalid-tooltip">
+            password is required!
+            </div> -->
+          </div>
+          <div class="form__input--login">
+            <input name="password_confirmation" type="password" class="login--input" required [(ngModel)]="requestRegister.password_confirmation" #password_confirmation="ngModel"/>
+            <label for="password_confirmation" class="login--label" minlength="6">
+              PASSWORD COMFIRMATION
+            </label>
+            <!-- #password="ngModel" [(ngModel)]="requestLogin.password" -->
+            <!-- <div *ngIf="password.invalid" class="invalid-tooltip">
+            password is required!
+            </div> -->
+          </div>
+          <span>Avaliable to <strong>Accredited investor</strong> only </span>
+
+          <div class="form_input--checkbox">
+            <input name="investidor" type="checkbox" class="checkbox--register">
+            <label for="investidor">I am an Accredited investor</label>
+          </div>
+          <div class="form_input--checkbox">
+            <input name="investidor" type="checkbox" class="checkbox--register">
+            <label for="investidor" class="label--checkbox">I am Not an Accredited investor</label>
+          </div>
+
+          <button class="btn--logar" type="button" style="width: 100%">
+            Sing in
+
+            <i class="bi bi-arrow-up-right"></i>
+          </button>
+        </form>
+
+        <div class="container__forgot--password">
+          <a routerLink="/forgot-password">Forgot login or password? </a>
+          <span>version 6.01.26</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <simple-notifications></simple-notifications>
+</div> -->
+
+<!-- <div class="card auth-card"> -->
+<!-- <div class="position-relative image-side ">
     <p class=" text-white h2">MAGIC IS IN THE DETAILS</p>
     <p class="white mb-0">
       Please use the form to register.
       <br>If you are a member, please
-      <a routerLink="/user/login" class="white white-underline-link">login</a>.
+      <a routerLink="" class="white white-underline-link">login</a>.
     </p>
   </div>
   <div class="form-side">
@@ -40,6 +164,6 @@
       </div>
     </form >
 
-  </div>
-</div>
+  </div> -->
+<!-- </div> -->
 <simple-notifications></simple-notifications>
