@@ -37,12 +37,12 @@
             alt="Logo da 2btrust"
           />
         </div>
-        <form>
+        <form >
           <div class="mb-3">
             <h3>To Invest, please create an account</h3>
           </div>
           <div class="form__input--login">
-            <input name="name" type="text" class="login--input" required [(ngModel)]="requestRegister.name" #name="ngModel"/>
+            <input required [(ngModel)]="requestRegister.name" #name="ngModel" name="name" type="text" class="login--input" />
             <label for="name" class="login--label">
               NAME
             </label>
@@ -55,8 +55,6 @@
             <input name="email" type="text" class="login--input"  required email [(ngModel)]="requestRegister.email" #email="ngModel"/>
             <label for="email" class="login--label">
               EMAIL
-            <div *ngIf="!email.valid && registerForm.submitted" class="invalid-tooltip">Email is required!</div>
-            <div *ngIf="email?.errors?.email && registerForm.submitted" class="invalid-tooltip">Email must be a valid address!</div>
 
             </label>
             <!-- [(ngModel)]="requestLogin.email" #email="ngModel"  -->
@@ -95,7 +93,7 @@
           <span>Avaliable to <strong>Accredited investor</strong> only </span>
 
           <div class="form_input--checkbox">
-            <input name="investidor" type="checkbox" class="checkbox--register">
+            <input name="investidor" type="checkbox" class="checkbox--register" [(ngModel)]="requestRegister.accredited_investor" #accredited_investor="ngModel" />
             <label for="investidor">I am an Accredited investor</label>
           </div>
           <div class="form_input--checkbox">
@@ -103,7 +101,7 @@
             <label for="investidor" class="label--checkbox">I am Not an Accredited investor</label>
           </div>
 
-          <button class="btn--logar" type="button" style="width: 100%">
+          <button class="btn--logar" type="button" style="width: 100%" (click)="doRegister()">
 
 Create an account
 

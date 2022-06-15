@@ -28,7 +28,11 @@ export class LoginComponent {
 
   public requestLogin: RequestLogin;
 
-  constructor(private alertService: AlertService ,private loginService: LoginService, private authService: AuthService, private notifications: NotificationsService, private router: Router) { }
+  constructor(private alertService: AlertService ,
+    private loginService: LoginService,
+    private authService: AuthService,
+    private notifications: NotificationsService,
+    private router: Router) { }
 
   ngOnInit(): void{
     this.requestLogin = new RequestLogin();
