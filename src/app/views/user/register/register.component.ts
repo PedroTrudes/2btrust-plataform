@@ -23,6 +23,7 @@ export class RegisterComponent {
 
   constructor(
     private registerService: RegisterService,
+    private alertService: AlertService,
     private authService: AuthService,
     private notifications: NotificationsService,
     private router: Router) { }
@@ -34,9 +35,13 @@ export class RegisterComponent {
   public doRegister() :void{
     console.log(this.requestRegister);
     this.registerService.doRegister(this.requestRegister).subscribe(dataRegister =>{
-      console.log(dataRegister);
+    console.log(dataRegister);
+    this.alertService.success('Usuario Criado com sucesso')
     },
     (httpError) =>{
+      this.alertService.error(httpError.error.errors.email[0] ||
+        httpError.error.errors.password[0] ||
+        httpError.error.errors.name[0]);
       console.error(httpError);
     })
   }
