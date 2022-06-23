@@ -15,6 +15,18 @@ export class QuestionsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
+
+// renomear para não ter espaços ou usar __
+// prestar atenção na nomenclatura.
+// nomes de variaveis em inglês.
+// formulario tem que ter NAME e ID.
+// campo com Require tem que ter Require.
+// usar minimo e maximo nos campos.
+// FrmQuestions NOME e ID.
+// só se usa ID nos componentes que vão ser manipulados no js.
+
+// tela de comfirmação de Email.

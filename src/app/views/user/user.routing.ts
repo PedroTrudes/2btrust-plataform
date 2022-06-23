@@ -11,7 +11,8 @@ import { environment } from 'src/environments/environment';
 
 //imports de pedro trudes
 import {QuestionsComponent} from './questions/questions.component';
-// import {LoginComponent} from '../../2btrust/forms/login/login.component';
+import { ConfirmationEmailComponent } from './confirmation-email/confirmation-email.component';
+import { MeetingComponent } from './meeting/meeting.component';
 
 const adminRoot = environment.adminRoot.substr(1); // path cannot start with a slash
 
@@ -25,6 +26,8 @@ const routes: Routes = [
             { path: 'forgot-password', component: ForgotPasswordComponent },
             { path: 'reset-password', component: ResetPasswordComponent },
             { path: 'questions', component: QuestionsComponent },
+            { path: 'confirmation-email', component: ConfirmationEmailComponent },
+            { path: 'meeting', component: MeetingComponent},
         ]
     },
     {
