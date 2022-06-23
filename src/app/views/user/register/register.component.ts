@@ -53,9 +53,6 @@ export class RegisterComponent {
     })
   }
 
-  public resetCampos(){
-
-  }
 
   // onSubmit(): void {
   //   if (this.registerForm.valid && !this.buttonDisabled) {

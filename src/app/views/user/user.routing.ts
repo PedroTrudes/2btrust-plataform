@@ -9,6 +9,8 @@ import { AuthGuard } from '../../shared/auth.guard';
 import { UserRole } from '../../shared/auth.roles';
 import { environment } from 'src/environments/environment';
 
+//imports de pedro trudes
+import {QuestionsComponent} from './questions/questions.component';
 // import {LoginComponent} from '../../2btrust/forms/login/login.component';
 
 const adminRoot = environment.adminRoot.substr(1); // path cannot start with a slash
@@ -21,7 +23,8 @@ const routes: Routes = [
             { path: 'login', component: LoginComponent },
             { path: 'register', component: RegisterComponent },
             { path: 'forgot-password', component: ForgotPasswordComponent },
-            { path: 'reset-password', component: ResetPasswordComponent }
+            { path: 'reset-password', component: ResetPasswordComponent },
+            { path: 'questions', component: QuestionsComponent },
         ]
     },
     {
