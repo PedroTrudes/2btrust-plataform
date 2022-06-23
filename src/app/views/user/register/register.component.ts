@@ -39,6 +39,7 @@ export class RegisterComponent {
     this.notifications.success('Success', dataRegister.message ,NotificationType.Success, {
       theClass: 'outline primary', timeOut: 2000, showProgressBar: false
     });
+    this.router.navigate(['/confirmation-email']);
 
     },
     (httpError) =>{
