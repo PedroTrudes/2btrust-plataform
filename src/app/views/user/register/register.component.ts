@@ -36,14 +36,25 @@ export class RegisterComponent {
     console.log(this.requestRegister);
     this.registerService.doRegister(this.requestRegister).subscribe(dataRegister =>{
     console.log(dataRegister);
-    this.alertService.success('Usuario Criado com sucesso')
+    this.notifications.success('Success', dataRegister.message ,NotificationType.Success, {
+      theClass: 'outline primary', timeOut: 2000, showProgressBar: false
+    });
+
     },
     (httpError) =>{
-      this.alertService.error(httpError.error.errors.email[0] ||
-        httpError.error.errors.password[0] ||
-        httpError.error.errors.name[0]);
+      //this.alertService.error(httpError.error.errors.email[0] ||
+      //httpError.error.errors.password[0] ||
+      //httpError.error.errors.name[0]);
+      this.notifications.create('Error',
+      httpError.error.errors.email[0] || httpError.error.errors.password[0],
+      NotificationType.Bare,
+     { theClass: 'outline primary', timeOut: 2000, showProgressBar: false });
       console.error(httpError);
     })
+  }
+
+  public resetCampos(){
+
   }
 
   // onSubmit(): void {
